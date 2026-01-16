@@ -7,11 +7,21 @@ import Home from './screens/Home';
 import Access from './screens/Access';
 import Menu from './screens/Menu';
 import Profile from './screens/Profile';
+import Bio from './screens/Bio';
 import { LanguageProvider } from './LanguageContext';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<AppTab>(AppTab.HOME);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isBioPage, setIsBioPage] = useState(false);
+
+  useEffect(() => {
+    // Simple routing check
+    const path = window.location.pathname;
+    if (path === '/bio') {
+      setIsBioPage(true);
+    }
+  }, []);
 
   // Reset scroll position when tab changes
   useEffect(() => {
@@ -19,6 +29,14 @@ const App: React.FC = () => {
       scrollRef.current.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [activeTab]);
+
+  if (isBioPage) {
+    return (
+      <LanguageProvider>
+        <Bio />
+      </LanguageProvider>
+    );
+  }
 
   return (
     <LanguageProvider>
