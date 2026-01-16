@@ -95,6 +95,26 @@ const Bio: React.FC = () => {
             {/* MAIN CONTENT AREA */}
             <div className="w-full max-w-md px-6 py-8 flex flex-col gap-8 pb-24">
 
+                {/* SECONDARY LINKS */}
+                <div className="flex flex-col gap-3">
+                    <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 px-1">Links Rápidos</h3>
+                    {[
+                        { icon: 'chat', label: 'Falar no WhatsApp', sub: 'Atendimento Online', url: 'https://wa.me/' },
+                        { icon: 'map', label: 'Como Chegar', sub: 'Abrir no Maps', url: 'https://maps.google.com' },
+                    ].map((link, idx) => (
+                        <a key={idx} href={link.url} target="_blank" className="group bg-[#121212] border border-white/5 p-4 rounded-xl flex items-center gap-4 hover:border-white/20 transition-all active:scale-[0.98]">
+                            <div className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 group-hover:text-white group-hover:bg-white/10 transition-colors">
+                                <span className="material-symbols-outlined">{link.icon}</span>
+                            </div>
+                            <div className="flex flex-col flex-1">
+                                <span className="text-sm font-bold text-white">{link.label}</span>
+                                <span className="text-[10px] text-gray-500">{link.sub}</span>
+                            </div>
+                            <span className="material-symbols-outlined text-gray-600 group-hover:text-white transition-colors">chevron_right</span>
+                        </a>
+                    ))}
+                </div>
+
                 {/* CAROUSEL SECTION */}
                 <div className="flex flex-col gap-3">
                     <div className="flex items-center justify-between px-1">
@@ -114,26 +134,6 @@ const Bio: React.FC = () => {
                             </div>
                         ))}
                     </div>
-                </div>
-
-                {/* SECONDARY LINKS */}
-                <div className="flex flex-col gap-3">
-                    <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 px-1">Links Rápidos</h3>
-                    {[
-                        { icon: 'chat', label: 'Falar no WhatsApp', sub: 'Atendimento Online', url: 'https://wa.me/' },
-                        { icon: 'map', label: 'Como Chegar', sub: 'Abrir no Maps', url: 'https://maps.google.com' },
-                    ].map((link, idx) => (
-                        <a key={idx} href={link.url} target="_blank" className="group bg-[#121212] border border-white/5 p-4 rounded-xl flex items-center gap-4 hover:border-white/20 transition-all active:scale-[0.98]">
-                            <div className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 group-hover:text-white group-hover:bg-white/10 transition-colors">
-                                <span className="material-symbols-outlined">{link.icon}</span>
-                            </div>
-                            <div className="flex flex-col flex-1">
-                                <span className="text-sm font-bold text-white">{link.label}</span>
-                                <span className="text-[10px] text-gray-500">{link.sub}</span>
-                            </div>
-                            <span className="material-symbols-outlined text-gray-600 group-hover:text-white transition-colors">chevron_right</span>
-                        </a>
-                    ))}
                 </div>
 
                 {/* FAQ SECTION */}
