@@ -10,7 +10,6 @@ const Access: React.FC = () => {
         { label: t.actionWifi, icon: 'wifi', color: 'text-blue-500', bg: 'bg-blue-500/10', action: 'wifi' },
         { label: t.actionPix, icon: 'qr_code_2', color: 'text-primary', bg: 'bg-primary/10', action: 'pix' },
         { label: t.actionReviews, icon: 'star', color: 'text-yellow-500', bg: 'bg-yellow-500/10', link: 'https://g.page/' },
-        { label: t.instagram, icon: 'photo_camera', color: 'text-pink-500', bg: 'bg-pink-500/10', link: 'https://instagram.com' },
         { label: t.maps, icon: 'map', color: 'text-gray-300', bg: 'bg-gray-500/10', link: 'https://maps.google.com' },
         { label: t.saveContact, icon: 'contact_phone', color: 'text-white', bg: 'bg-white/10', action: 'vcard' },
     ];
