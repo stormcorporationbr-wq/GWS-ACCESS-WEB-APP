@@ -8,18 +8,30 @@ import Access from './screens/Access';
 import Menu from './screens/Menu';
 import Profile from './screens/Profile';
 import Bio from './screens/Bio';
+import Login from './screens/Login';
 import { LanguageProvider } from './LanguageContext';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<AppTab>(AppTab.HOME);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isBioPage, setIsBioPage] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [guestName, setGuestName] = useState('');
 
   useEffect(() => {
-    // Simple routing check
+    // 1. Check for BIO page
     const path = window.location.pathname;
     if (path === '/bio') {
       setIsBioPage(true);
+      return;
+    }
+
+    // 2. Check for existing session (Guest App)
+    const storedAuth = localStorage.getItem('gws_auth');
+    if (storedAuth) {
+      const { name } = JSON.parse(storedAuth);
+      setGuestName(name);
+      setIsAuthenticated(true);
     }
   }, []);
 
@@ -30,6 +42,13 @@ const App: React.FC = () => {
     }
   }, [activeTab]);
 
+  const handleLogin = (name: string, room: string) => {
+    localStorage.setItem('gws_auth', JSON.stringify({ name, room, timestamp: Date.now() }));
+    setGuestName(name);
+    setIsAuthenticated(true);
+  };
+
+  // RENDER: Bio Page (Public)
   if (isBioPage) {
     return (
       <LanguageProvider>
@@ -38,6 +57,16 @@ const App: React.FC = () => {
     );
   }
 
+  // RENDER: Login Screen (Gatekeeper)
+  if (!isAuthenticated && !isBioPage) {
+    return (
+      <LanguageProvider>
+        <Login onLogin={handleLogin} />
+      </LanguageProvider>
+    );
+  }
+
+  // RENDER: Main Guest App (Protected)
   return (
     <LanguageProvider>
       <div className="relative w-full h-screen bg-background-dark overflow-hidden flex flex-col">
@@ -57,6 +86,7 @@ const App: React.FC = () => {
               <Home
                 onExplore={() => setActiveTab(AppTab.MODULE)}
                 onOpenAccess={() => setActiveTab(AppTab.ACCESS)}
+                guestName={guestName}
               />
             )}
             {activeTab === AppTab.ACCESS && <Access />}

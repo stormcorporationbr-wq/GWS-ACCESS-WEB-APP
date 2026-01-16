@@ -5,6 +5,7 @@ import { useLanguage } from '../LanguageContext';
 interface HomeProps {
   onExplore: () => void;
   onOpenAccess: () => void;
+  guestName?: string;
 }
 
 const BANNER_SLIDES = [
@@ -33,7 +34,7 @@ const GALLERY_IMAGES = [
   "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop"
 ];
 
-const Home: React.FC<HomeProps> = ({ onExplore, onOpenAccess }) => {
+const Home: React.FC<HomeProps> = ({ onExplore, onOpenAccess, guestName }) => {
   const { t, language } = useLanguage();
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
@@ -101,7 +102,7 @@ const Home: React.FC<HomeProps> = ({ onExplore, onOpenAccess }) => {
       <div className="flex flex-col gap-1 fade-in pl-1">
         <h2 className="text-xs font-montserrat font-bold text-primary tracking-[0.25em] uppercase flex items-center gap-2">
           <span className="h-px w-6 bg-primary"></span>
-          {greeting}
+          {greeting}{guestName ? `, ${guestName}` : ''}
         </h2>
         <h1 className="text-4xl font-display font-light text-white leading-none tracking-tight">
           {t.heroInstitution}
