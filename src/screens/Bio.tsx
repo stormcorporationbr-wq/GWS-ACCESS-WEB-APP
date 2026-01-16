@@ -29,7 +29,7 @@ const Bio: React.FC = () => {
     ];
 
     return (
-        <div className={`min-h-screen bg-background-dark text-white flex flex-col items-center relative overflow-x-hidden transition-opacity duration-700 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+        <div className={`h-screen overflow-y-auto bg-background-dark text-white flex flex-col items-center relative overflow-x-hidden transition-opacity duration-700 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
 
             {/* HER0 SECTION */}
             <div className="relative w-full h-[65vh] flex flex-col items-center justify-center text-center px-6">
