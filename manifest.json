@@ -1,0 +1,22 @@
+
+{
+  "name": "Pé na Areia Boutique Hotel",
+  "short_name": "Pé na Areia",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBi-uM3xTcAs9wN8q5nvPQ7fcJIqitmmN0UV6H-Ov7DybgSciL7Pc3HanQDLKD9rrrMirs-fppyo9tnJV12F8G3L5UnezFhQjocUWdygnsP-9ot58Hnjz-dxzhtsOatGrh0Mt7B-1wBKBJDyoQxMVC2dJz3XfrZV0McN-BVdEhOsR-wTTIq08fooBBco-2fPUr44qpKtiPsan9VwAxqFA2aBFjHYmiHJb1ZZ23ZMv9TyWP8bez8lkI3sAAJD94sH7fROm9yYH_WH0I",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBi-uM3xTcAs9wN8q5nvPQ7fcJIqitmmN0UV6H-Ov7DybgSciL7Pc3HanQDLKD9rrrMirs-fppyo9tnJV12F8G3L5UnezFhQjocUWdygnsP-9ot58Hnjz-dxzhtsOatGrh0Mt7B-1wBKBJDyoQxMVC2dJz3XfrZV0McN-BVdEhOsR-wTTIq08fooBBco-2fPUr44qpKtiPsan9VwAxqFA2aBFjHYmiHJb1ZZ23ZMv9TyWP8bez8lkI3sAAJD94sH7fROm9yYH_WH0I",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
