@@ -206,11 +206,6 @@ const Profile: React.FC = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <div className="flex flex-col items-center justify-center pt-4 opacity-30 pb-4">
-        <span className="material-symbols-outlined text-xl mb-2 text-white">encrypted</span>
-        <p className="text-[9px] text-white uppercase tracking-[0.3em] text-center">{t.poweredBy}</p>
-      </div>
     </div>
   );
 };
