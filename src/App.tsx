@@ -33,7 +33,7 @@ const App: React.FC = () => {
 
           <main
             ref={scrollRef}
-            className="flex-1 overflow-y-auto no-scrollbar scroll-mask-content pb-20 md:pb-0 md:pl-28 transition-all duration-300"
+            className="flex-1 overflow-y-auto no-scrollbar scroll-mask-content pb-36 md:pb-0 md:pl-28 transition-all duration-300"
           >
             {activeTab === AppTab.HOME && (
               <Home
